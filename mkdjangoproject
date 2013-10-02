@@ -15,8 +15,14 @@ cd $1
 bin/django-admin.py startproject $2
 
 # copy over a new settings.py if it exists
+# insert the appropriate settings values into the settings.py file
 if [ -e ~/djangowrapper/settings.tpl ]
 then
-    cp ~/djangowrapper/settings.tpl $WORKON_HOME/$1/$2/$2/settings.py
+    cat ~/djangowrapper/settings.tpl | cat - $WORKON_HOME/$1/$2/$2/settings.py > temp && mv temp $WORKON_HOME/$1/$2/$2/settings.py
+    #cp ~/djangowrapper/settings.tpl $WORKON_HOME/$1/$2/$2/settings.py
+
+    echo
+    echo "Don't forget to edit $WORKON_HOME/$1/$2/$2/settings.py"
+    echo
 fi
 
