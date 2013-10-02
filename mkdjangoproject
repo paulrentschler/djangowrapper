@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # create the virtualenv
-mkvirtualenv $1 --no-site-packages
+cd $WORKON_HOME
+virtualenv --no-site-packages $1
 
-# switch to the virtualenv
-workon $1
+# activate the virtualenv
+source $1/bin/activate
 
 # install anything in the new-env-packages.local file
 pip install -r ~/djangowrapper/new-env-packages.local
