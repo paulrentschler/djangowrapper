@@ -1,0 +1,5 @@
+# Rename this file to packages.local and update it to contain all of the
+# packages to be installed in the newly created virtualenv
+#
+Django<1.6
+
