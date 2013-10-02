@@ -21,11 +21,9 @@ echo "cd $WORKON_HOME/$1/$2" >> $WORKON_HOME/$1/bin/postactivate
 chmod 775 $WORKON_HOME/$1/bin/postactivate
 
 # insert the appropriate settings values into the settings.py file
-SETTINGS=0
 if [ -e ~/djangowrapper/settings.tpl ]
 then
     cat ~/djangowrapper/settings.tpl | cat - $WORKON_HOME/$1/$2/$2/settings.py > temp && mv temp $WORKON_HOME/$1/$2/$2/settings.py
-    SETTINGS=1
 fi
 
 echo
