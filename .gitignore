@@ -1,0 +1,6 @@
+# ignore the customized pip requirements file
+new-env-packages.local
+
+# ignore the settings.py template file
+settings.tpl
+
