@@ -17,6 +17,6 @@ bin/django-admin.py startproject $2
 # copy over a new settings.py if it exists
 if [ -e ~/djangowrapper/settings.tpl ]
 then
-    cp ~/djangowrapper/settings.tpl $WORKON_HOME/$1/$2/settings.py
+    cp ~/djangowrapper/settings.tpl $WORKON_HOME/$1/$2/$2/settings.py
 fi
 
