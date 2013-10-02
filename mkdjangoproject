@@ -8,7 +8,7 @@ virtualenv --no-site-packages $1
 source $1/bin/activate
 
 # install anything in the new-env-packages.local file
-pip install -r ~/djangowrapper/new-env-packages.local
+pip install -r ~/djangowrapper/packages.local
 
 # create the new django project
 cd $1
