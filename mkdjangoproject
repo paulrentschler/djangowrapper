@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# create the virtualenv
+mkvirtualenv $1 --no-site-packages
+
+# switch to the virtualenv
+workon $1
+
+# install anything in the new-env-packages.local file
+pip install -r ~/djangowrapper/new-env-packages.local
+
+# copy over a new settings.py if it exists
+if [ -e ~/djangowrapper/settings.tpl ]
+then
+    cp ~/djangowrapper/settings.tpl $WORKING_HOME/$1/$2/settings.py
+fi
+
